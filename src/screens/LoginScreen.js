@@ -10,20 +10,21 @@ import ReactNative, {
 
 import {useState, useRef} from 'react';
 
-const LoginScreen = () => {
+const LoginScreen = ({setLoginView}) => {
   const emailInput = useRef();
   const passwordInput = useRef();
   const [error, SetError] = useState(false);
   const [email, SetEmail] = useState('');
   const [password, SetPassword] = useState('');
   const userAdmin = {
-    email: 'roku@roku.com',
+    email: 'roku@',
     password: 'roku',
   };
   const handleSubmit = () => {
     if (email === userAdmin.email && password === userAdmin.password) {
       console.log('sign in successfully');
       //   NavigateToHome();
+      setLoginView(true);
       SetError(false);
     } else {
       SetError(true);
@@ -71,6 +72,7 @@ const LoginScreen = () => {
             style={styles.input}
             ref={emailInput}
             placeholder="Email"
+            autoCapitalize="none"
             onChangeText={email => SetEmail(email)}
           />
           {error && (

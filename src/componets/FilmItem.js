@@ -54,8 +54,12 @@ const styles = StyleSheet.create({
   wrapperFocused: {
     borderColor: '#714add',
   },
+  imageFocused: {
+    width: 210,
+    height: 160,
+  },
   image: {
-    width: 250,
+    width: 200,
     height: 150,
     borderRadius: 10,
   },
