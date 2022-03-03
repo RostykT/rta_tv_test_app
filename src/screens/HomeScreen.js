@@ -10,23 +10,16 @@ import Films from '../componets/Films';
 // import FlatListDemo from '../componets/FlatList';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-const HomeScreen = () => {
+const HomeScreen = ({handleTouch}) => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
+          // contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Films rowNumber={0} />
-
-              <Films />
-
-              <Films />
-
-              <Films />
+              <Films handleTouch={handleTouch} />
             </View>
           </View>
         </ScrollView>

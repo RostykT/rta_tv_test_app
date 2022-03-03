@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
+import {StyleSheet, ScrollView, FlatList} from 'react-native';
 import FilmItem from './FilmItem';
 
 const films = [
@@ -165,19 +165,23 @@ const films = [
   },
 ];
 
-const Gallery = ({rowNumber}) => {
+const Films = ({rowNumber, handleTouch}) => {
+  const renderItem = ({item, index}) => (
+    <FilmItem
+      key={index}
+      image={item.Poster}
+      hasTVPreferredFocus={rowNumber === 0 && index === 0}
+      blockFocusRight={index === item.length - 1}
+      handleTouch={handleTouch}
+    />
+  );
   return (
-    <ScrollView horizontal style={styles.row}>
-      {films.map((film, index) => (
-        <FilmItem
-          key={index}
-          // title={film.Title}
-          image={film.Poster}
-          hasTVPreferredFocus={rowNumber === 0 && index === 0}
-          blockFocusRight={index === film.length - 1}
-        />
-      ))}
-    </ScrollView>
+    <FlatList
+      data={films}
+      style={styles.container}
+      numColumns={4}
+      renderItem={renderItem}
+    />
   );
 };
 
@@ -185,6 +189,10 @@ const styles = StyleSheet.create({
   row: {
     marginBottom: 50,
   },
+  container: {
+    flex: 1,
+    marginVertical: 20,
+  },
 });
 
-export default Gallery;
+export default Films;

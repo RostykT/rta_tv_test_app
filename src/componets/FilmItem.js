@@ -6,9 +6,15 @@ import {
   Image,
   TouchableHighlight,
   findNodeHandle,
+  TouchableOpacity,
 } from 'react-native';
 
-const FilmItem = ({title, image, hasTVPreferredFocus, blockFocusRight}) => {
+const FilmItem = ({
+  image,
+  hasTVPreferredFocus,
+  blockFocusRight,
+  handleTouch,
+}) => {
   const [focus, setFocus] = useState(false);
 
   const onFocus = useCallback(() => {
@@ -25,22 +31,20 @@ const FilmItem = ({title, image, hasTVPreferredFocus, blockFocusRight}) => {
       touchableHighlightRef.current = ref;
     }
   }, []);
-
   return (
-    <TouchableHighlight
-      onFocus={onFocus}
-      onBlur={onBlur}
-      hasTVPreferredFocus={hasTVPreferredFocus}
-      style={[styles.wrapper, focus ? styles.wrapperFocused : null]}
-      ref={onRef}
-      nextFocusRight={
-        blockFocusRight ? findNodeHandle(touchableHighlightRef.current) : null
-      }>
-      <View>
+    <TouchableOpacity onPress={handleTouch}>
+      <TouchableHighlight
+        onFocus={onFocus}
+        onBlur={onBlur}
+        hasTVPreferredFocus={hasTVPreferredFocus}
+        style={[styles.wrapper, focus ? styles.wrapperFocused : null]}
+        ref={onRef}
+        nextFocusRight={
+          blockFocusRight ? findNodeHandle(touchableHighlightRef.current) : null
+        }>
         <Image style={styles.image} source={{uri: image}} />
-        <Text style={styles.text}>{title}</Text>
-      </View>
-    </TouchableHighlight>
+      </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
@@ -52,7 +56,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   wrapperFocused: {
-    borderColor: '#714add',
+    // borderColor: '#714add',
   },
   imageFocused: {
     width: 210,
