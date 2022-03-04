@@ -15,14 +15,6 @@ const App = () => {
   console.log(showVideo);
   return (
     <View>
-      {/* {!loginView ? (
-        <LoginScreen setLoginView={setLoginView} />
-      ) : showVideo ? (
-        <VideoComponent />
-      ) : (
-        <HomeScreen handleTouch={handleTouch} />
-      )}
-      {showVideo && <VideoComponent handleTouch={handleTouch} />} */}
       {!loginView ? (
         <LoginScreen setLoginView={setLoginView} />
       ) : !showVideo ? (
@@ -30,6 +22,7 @@ const App = () => {
       ) : (
         <VideoComponent handleTouch={handleTouch} />
       )}
+      {/* <VideoComponent /> */}
     </View>
   );
 };

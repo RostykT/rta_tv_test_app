@@ -163,6 +163,38 @@ const films = [
     Poster:
       'https://m.media-amazon.com/images/M/MV5BN2FhOTQ2MmQtNTY0OC00NWYyLThjNjMtZmZiOTBmYTY4MmM2XkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1_SX300.jpg',
   },
+  {
+    Title: 'Terminator 2: Judgment Day',
+    Year: '1991',
+    imdbID: 'tt0103064',
+    Type: 'movie',
+    Directed_by: 'James Cameron',
+    Country: 'USA',
+    Description: `Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit, 
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BMGU2NzRmZjUtOGUxYS00ZjdjLWEwZWItY2NlM2JhNjkxNTFmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg',
+  },
+  {
+    Title: 'The Terminator',
+    Year: '1984',
+    imdbID: 'tt0088247',
+    Type: 'movie',
+    Directed_by: 'James Cameron',
+    Country: 'USA',
+    Description: `Lorem ipsum dolor sit amet,
+       consectetur adipiscing elit, 
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+    Poster:
+      'https://m.media-amazon.com/images/M/MV5BYTViNzMxZjEtZGEwNy00MDNiLWIzNGQtZDY2MjQ1OWViZjFmXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg',
+  },
 ];
 
 const Films = ({rowNumber, handleTouch}) => {

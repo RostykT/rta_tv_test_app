@@ -43,7 +43,7 @@ const LoginScreen = ({setLoginView}) => {
     },
     button: {
       marginTop: 10,
-      backgroundColor: '#1572A1',
+      backgroundColor: '#316B83',
       width: 400,
       padding: 10,
       borderRadius: 5,

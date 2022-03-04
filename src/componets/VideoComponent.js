@@ -3,7 +3,7 @@ import {
   Text,
   View,
   Dimensions,
-  TouchableWithoutFeedback,
+  TouchableOpacity,
 } from 'react-native';
 import React from 'react';
 import Video from 'react-native-video';
@@ -30,24 +30,16 @@ const styles = StyleSheet.create({
 console.log(viewWidth, viewHeight);
 const VideoComponent = ({handleTouch}) => {
   return (
-    <View style={styles.wrapper}>
-      <TouchableWithoutFeedback onPress={handleTouch}>
-        <View style={styles.backgroundVideo} />
-      </TouchableWithoutFeedback>
-    </View>
-
-    // <Video
-    //   // source={TestVideo}
-    //   source={{
-    //     uri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
-    //   }}
-    //   ref={ref => {
-    //     this.player = ref;
-    //   }}
-    //   onBuffer={this.onBuffer}
-    //   onError={this.videoError}
-    //   style={styles.backgroundVideo}
-    // />
+    <Video
+      source={TestVideo}
+      ref={ref => {
+        this.player = ref;
+      }}
+      controls={true}
+      onBuffer={this.onBuffer}
+      onError={this.videoError}
+      style={styles.backgroundVideo}
+    />
   );
 };
 
