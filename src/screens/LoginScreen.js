@@ -1,5 +1,6 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import ReactNative, {
+import {
   SafeAreaView,
   StyleSheet,
   Text,
@@ -28,7 +29,6 @@ const LoginScreen = ({setLoginView}) => {
       SetError(false);
     } else {
       SetError(true);
-      console.log('Russian warship, go fuck yourself');
     }
   };
   const styles = StyleSheet.create({
@@ -73,7 +73,7 @@ const LoginScreen = ({setLoginView}) => {
             ref={emailInput}
             placeholder="Email"
             autoCapitalize="none"
-            onChangeText={email => SetEmail(email)}
+            onChangeText={text => SetEmail(text)}
           />
           {error && (
             <Text style={styles.errorText}>Incorrect password or email</Text>
@@ -87,7 +87,7 @@ const LoginScreen = ({setLoginView}) => {
             ref={passwordInput}
             placeholder="Password"
             secureTextEntry
-            onChangeText={password => SetPassword(password)}
+            onChangeText={text => SetPassword(text)}
           />
           {error && (
             <Text style={styles.errorText}>Incorrect password or email</Text>

@@ -14,7 +14,7 @@ const App = () => {
   };
   console.log(showVideo);
   return (
-    <View>
+    <>
       {!loginView ? (
         <LoginScreen setLoginView={setLoginView} />
       ) : !showVideo ? (
@@ -23,7 +23,7 @@ const App = () => {
         <VideoComponent handleTouch={handleTouch} />
       )}
       {/* <VideoComponent /> */}
-    </View>
+    </>
   );
 };
 const styles = StyleSheet.create({
